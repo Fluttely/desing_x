@@ -35,15 +35,15 @@ class ImageRef extends Image with TokenRef<ImageToken, Image> {
   final ImageToken token;
   const ImageRef(this.token, {super.key}) : super(image: const AssetImage(''));
 
-  @override
-  operator ==(Object other) {
-    if (identical(this, other)) return true;
+  // @override
+  // operator ==(Object other) {
+  //   if (identical(this, other)) return true;
 
-    return other is ImageRef && other.token == token;
-  }
+  //   return other is ImageRef && other.token == token;
+  // }
 
-  @override
-  int get hashCode => token.hashCode;
+  // @override
+  // int get hashCode => token.hashCode;
 }
 
 @immutable

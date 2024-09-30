@@ -1,8 +1,8 @@
 import 'dart:convert';
 
 import 'package:design_x/design_x.dart';
-import 'package:example/models/user.dart';
-import 'package:example/theme/data.dart';
+import 'package:example/full_example/models/user.dart';
+import 'package:example/full_example/theme/data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 

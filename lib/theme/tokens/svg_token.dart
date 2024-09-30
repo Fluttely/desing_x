@@ -42,15 +42,15 @@ class SvgRef extends SvgPicture with TokenRef<SvgToken, SvgPicture> {
           const SvgAssetLoader('', packageName: null, assetBundle: null, theme: null),
         );
 
-  @override
-  operator ==(Object other) {
-    if (identical(this, other)) return true;
+  // @override
+  // operator ==(Object other) {
+  //   if (identical(this, other)) return true;
 
-    return other is SvgRef && other.token == token;
-  }
+  //   return other is SvgRef && other.token == token;
+  // }
 
-  @override
-  int get hashCode => token.hashCode;
+  // @override
+  // int get hashCode => token.hashCode;
 }
 
 @immutable

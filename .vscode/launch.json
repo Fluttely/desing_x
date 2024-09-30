@@ -5,7 +5,8 @@
       "type": "dart",
       "request": "launch",
       "program": "example/lib/main.dart",
-      // "args": ["-d", "chrome", "--web-renderer", "canvaskit"]
+      "args": ["-d", "chrome", "--web-renderer", "canvaskit"],
+      "noDebug": true
     }
   ]
 }
