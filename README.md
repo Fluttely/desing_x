@@ -1,4 +1,4 @@
-# Material Toolkit
+# Design X
 
 `design_x` is a tool that helps you build custom design systems based on `mix` package. It offers greater flexibility and scalability to define and implement the visual identity of your app, allowing you to efficiently and consistently tailor the design.
 
