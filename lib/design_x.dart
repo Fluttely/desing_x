@@ -7,17 +7,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:mix/mix.dart'
-    hide
-        $token,
-        $material,
-        RadiusTokenUtil,
-        SpaceTokenUtil,
-        ColorTokenUtil,
-        TextStyleTokenUtil,
-        BreakpointTokenUtil;
+    hide $token, $material, RadiusTokenUtil, SpaceTokenUtil, ColorTokenUtil, TextStyleTokenUtil, BreakpointTokenUtil;
 
-export 'package:flutter_svg/flutter_svg.dart';
-export 'package:gap/gap.dart';
 export 'package:mix/mix.dart'
     hide
         $token,

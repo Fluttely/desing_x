@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:design_x/design_x.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
+import 'package:flutter_svg/flutter_svg.dart';
 
 void main() {
   runApp(const MyApp());
@@ -112,8 +113,7 @@ List<Widget> _body(List<User> users, BuildContext context) {
   final googleLogo = theme.images[$token.image.googleLogo]!;
   final googleLogoUrl = googleLogo.getNetworkUrl() ?? '';
 
-  final mediumBorderRadius =
-      theme.radii[$token.radius.medium]!.toBorderRadius();
+  final mediumBorderRadius = theme.radii[$token.radius.medium]!.toBorderRadius();
 
   final extraLargeSpace = theme.spaces[$token.space.extraLarge]!;
   final extraLargeGap = extraLargeSpace.toGap();
@@ -283,11 +283,9 @@ final themeData = XThemeData.withStandard(
     $token.font.astronaut: 'Astronaut_PersonalUse',
   },
   images: {
-    $token.image.fruit:
-        const Image(image: AssetImage('assets/images/orange.jpg')),
-    $token.image.googleLogo: const Image(
-        image: NetworkImage(
-            'https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png')),
+    $token.image.fruit: const Image(image: AssetImage('assets/images/orange.jpg')),
+    $token.image.googleLogo:
+        const Image(image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png')),
   },
   radii: {
     $token.radius.medium: const Radius.circular(12),
