@@ -14,9 +14,7 @@ class DurationToken extends MixToken<Duration> {
       'DurationToken $name is not defined in the theme and has no default value',
     );
 
-    final resolvedValue = themeValue is DurationResolver
-        ? themeValue.resolve(context)
-        : themeValue;
+    final resolvedValue = themeValue is DurationResolver ? themeValue.resolve(context) : themeValue;
 
     return resolvedValue ?? const Duration();
   }
@@ -31,7 +29,7 @@ class DurationResolver extends Duration with WithTokenResolver<Duration> {
 }
 
 @immutable
-class DurationRef extends Duration with TokenRef<DurationToken, Duration> {
+class DurationRef extends Duration with TokenRef<DurationToken> {
   @override
   final DurationToken token;
 

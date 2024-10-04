@@ -15,8 +15,7 @@ class ImageToken extends MixToken<Image> {
       'ImageToken $name is not defined in the theme and has no default value',
     );
 
-    final resolvedValue =
-        themeValue is ImageResolver ? themeValue.resolve(context) : themeValue;
+    final resolvedValue = themeValue is ImageResolver ? themeValue.resolve(context) : themeValue;
 
     return resolvedValue ?? const Image(image: AssetImage(''));
   }
@@ -27,12 +26,11 @@ class ImageResolver extends Image with WithTokenResolver<Image> {
   @override
   final BuildContextResolver<Image> resolve;
 
-  const ImageResolver(this.resolve, {super.key})
-      : super(image: const AssetImage(''));
+  const ImageResolver(this.resolve, {super.key}) : super(image: const AssetImage(''));
 }
 
 @immutable
-class ImageRef extends Image with TokenRef<ImageToken, Image> {
+class ImageRef extends Image with TokenRef<ImageToken> {
   @override
   final ImageToken token;
   const ImageRef(this.token, {super.key}) : super(image: const AssetImage(''));

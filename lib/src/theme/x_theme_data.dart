@@ -4,8 +4,7 @@ class XTheme extends InheritedWidget {
   const XTheme({required super.child, required this.data, super.key});
 
   static XThemeData of(BuildContext context) {
-    final metricsData =
-        context.dependOnInheritedWidgetOfExactType<XTheme>()?.data;
+    final metricsData = context.dependOnInheritedWidgetOfExactType<XTheme>()?.data;
 
     assert(metricsData != null, 'No XTheme found in context');
 
@@ -48,6 +47,7 @@ class XThemeData extends MixThemeData {
     required this.svgs,
     required this.textShadows,
     required super.textStyles,
+    required super.defaultOrderOfModifiers,
   }) : super.raw();
 
   const XThemeData.empty()
@@ -77,6 +77,7 @@ class XThemeData extends MixThemeData {
     Map<SvgToken, SvgPicture>? svgs,
     Map<TextShadowToken, Shadow>? textShadows,
     Map<TextStyleToken, TextStyle>? textStyles,
+    List<Type>? defaultOrderOfModifiers,
   }) {
     return XThemeData.raw(
       assets: StyledTokens(assets ?? const {}),
@@ -95,6 +96,7 @@ class XThemeData extends MixThemeData {
       svgs: StyledTokens(svgs ?? const {}),
       textShadows: StyledTokens(textShadows ?? const {}),
       textStyles: StyledTokens(textStyles ?? const {}),
+      defaultOrderOfModifiers: defaultOrderOfModifiers, // ?? this.defaultOrderOfModifiers,
     );
   }
 
@@ -186,27 +188,24 @@ class XThemeData extends MixThemeData {
     Map<SvgToken, SvgPicture>? svgs,
     Map<TextShadowToken, Shadow>? textShadows,
     Map<TextStyleToken, TextStyle>? textStyles,
+    List<Type>? defaultOrderOfModifiers,
   }) {
     return XThemeData.raw(
       assets: assets == null ? this.assets : StyledTokens(assets),
-      boxShadows:
-          boxShadows == null ? this.boxShadows : StyledTokens(boxShadows),
+      boxShadows: boxShadows == null ? this.boxShadows : StyledTokens(boxShadows),
       durations: durations == null ? this.durations : StyledTokens(durations),
-      elevations:
-          elevations == null ? this.elevations : StyledTokens(elevations),
+      elevations: elevations == null ? this.elevations : StyledTokens(elevations),
       fonts: fonts == null ? this.fonts : StyledTokens(fonts),
       // gaps: gaps == null ? this.gaps : StyledTokens(gaps),
       images: images == null ? this.images : StyledTokens(images),
       svgs: svgs == null ? this.svgs : StyledTokens(svgs),
-      textShadows:
-          textShadows == null ? this.textShadows : StyledTokens(textShadows),
-      textStyles:
-          textStyles == null ? this.textStyles : StyledTokens(textStyles),
+      textShadows: textShadows == null ? this.textShadows : StyledTokens(textShadows),
+      textStyles: textStyles == null ? this.textStyles : StyledTokens(textStyles),
       colors: colors == null ? this.colors : StyledTokens(colors),
-      breakpoints:
-          breakpoints == null ? this.breakpoints : StyledTokens(breakpoints),
+      breakpoints: breakpoints == null ? this.breakpoints : StyledTokens(breakpoints),
       radii: radii == null ? this.radii : StyledTokens(radii),
       spaces: spaces == null ? this.spaces : StyledTokens(spaces),
+      defaultOrderOfModifiers: defaultOrderOfModifiers ?? this.defaultOrderOfModifiers,
     );
   }
 
@@ -226,6 +225,7 @@ class XThemeData extends MixThemeData {
       breakpoints: breakpoints.merge(other.breakpoints),
       radii: radii.merge(other.radii),
       spaces: spaces.merge(other.spaces),
+      defaultOrderOfModifiers: (defaultOrderOfModifiers ?? []).merge(other.defaultOrderOfModifiers),
     );
   }
 }

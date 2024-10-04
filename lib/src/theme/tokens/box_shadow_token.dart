@@ -14,9 +14,7 @@ class BoxShadowToken extends MixToken<BoxShadow> {
       'BoxShadowToken $name is not defined in the theme and has no default value',
     );
 
-    final resolvedValue = themeValue is BoxShadowResolver
-        ? themeValue.resolve(context)
-        : themeValue;
+    final resolvedValue = themeValue is BoxShadowResolver ? themeValue.resolve(context) : themeValue;
 
     return resolvedValue ?? const BoxShadow();
   }
@@ -31,7 +29,7 @@ class BoxShadowResolver extends BoxShadow with WithTokenResolver<BoxShadow> {
 }
 
 @immutable
-class BoxShadowRef extends BoxShadow with TokenRef<BoxShadowToken, BoxShadow> {
+class BoxShadowRef extends BoxShadow with TokenRef<BoxShadowToken> {
   @override
   final BoxShadowToken token;
 

@@ -16,8 +16,7 @@ class SvgToken extends MixToken<SvgPicture> {
       'SvgToken $name is not defined in the theme and has no default value',
     );
 
-    final resolvedValue =
-        themeValue is SvgResolver ? themeValue.resolve(context) : themeValue;
+    final resolvedValue = themeValue is SvgResolver ? themeValue.resolve(context) : themeValue;
 
     return resolvedValue ?? SvgPicture.asset('');
   }
@@ -30,19 +29,17 @@ class SvgResolver extends SvgPicture with WithTokenResolver<SvgPicture> {
 
   SvgResolver(this.resolve, {super.key})
       : super(
-          const SvgAssetLoader('',
-              packageName: null, assetBundle: null, theme: null),
+          const SvgAssetLoader('', packageName: null, assetBundle: null, theme: null),
         );
 }
 
 @immutable
-class SvgRef extends SvgPicture with TokenRef<SvgToken, SvgPicture> {
+class SvgRef extends SvgPicture with TokenRef<SvgToken> {
   @override
   final SvgToken token;
   const SvgRef(this.token, {super.key})
       : super(
-          const SvgAssetLoader('',
-              packageName: null, assetBundle: null, theme: null),
+          const SvgAssetLoader('', packageName: null, assetBundle: null, theme: null),
         );
 
   // @override
@@ -63,8 +60,7 @@ class UtilityWithSvgTokens<T> {
   const UtilityWithSvgTokens(T Function(SvgPicture value) fn) : _fn = fn;
 
   factory UtilityWithSvgTokens.shorthand(
-    T Function(SvgPicture p1, [SvgPicture? p2, SvgPicture? p3, SvgPicture? p4])
-        fn,
+    T Function(SvgPicture p1, [SvgPicture? p2, SvgPicture? p3, SvgPicture? p4]) fn,
   ) {
     return UtilityWithSvgTokens((SvgPicture value) => fn(value));
   }
