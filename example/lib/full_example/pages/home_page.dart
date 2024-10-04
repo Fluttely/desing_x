@@ -89,7 +89,8 @@ List<Widget> _body(List<User> users, BuildContext context) {
   final googleLogo = theme.images[$token.image.googleLogo]!;
   final googleLogoUrl = googleLogo.getNetworkUrl() ?? '';
 
-  final mediumBorderRadius = theme.radii[$token.radius.medium]!.toBorderRadius();
+  final mediumBorderRadius =
+      theme.radii[$token.radius.medium]!.toBorderRadius();
 
   final extraLargeSpace = theme.spaces[$token.space.extraLarge]!;
   final extraLargeGap = extraLargeSpace.toGap();

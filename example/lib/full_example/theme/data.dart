@@ -87,9 +87,11 @@ final themeData = XThemeData.withStandard(
     $token.font.astronaut: 'Astronaut_PersonalUse',
   },
   images: {
-    $token.image.fruit: const Image(image: AssetImage('assets/images/orange.jpg')),
-    $token.image.googleLogo:
-        const Image(image: NetworkImage('https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png')),
+    $token.image.fruit:
+        const Image(image: AssetImage('assets/images/orange.jpg')),
+    $token.image.googleLogo: const Image(
+        image: NetworkImage(
+            'https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png')),
   },
   radii: {
     $token.radius.medium: const Radius.circular(12),

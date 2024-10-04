@@ -14,7 +14,9 @@ class TextShadowToken extends MixToken<Shadow> {
       'TextShadowToken $name is not defined in the theme and has no default value',
     );
 
-    final resolvedValue = themeValue is TextShadowResolver ? themeValue.resolve(context) : themeValue;
+    final resolvedValue = themeValue is TextShadowResolver
+        ? themeValue.resolve(context)
+        : themeValue;
 
     return resolvedValue ?? const Shadow();
   }

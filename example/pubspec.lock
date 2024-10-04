@@ -58,7 +58,7 @@ packages:
     source: hosted
     version: "1.0.8"
   design_x:
-    dependency: "direct dev"
+    dependency: "direct main"
     description:
       path: ".."
       relative: true
