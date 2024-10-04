@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_svg/flutter_svg.dart';
 
+// main.dart
 void main() {
   runApp(const MyApp());
 }
@@ -30,6 +31,7 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// pages/home_page.dart
 class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
@@ -197,7 +199,8 @@ List<Widget> _body(List<User> users, BuildContext context) {
   ];
 }
 
-/// TOKENS
+// theme/data.dart
+/// CUSTOM TOKENS
 extension AssetTokenUtilExtension on AssetTokenUtil {
   AssetToken get sample => const AssetToken('sample');
 }
@@ -317,6 +320,7 @@ final themeData = XThemeData.withStandard(
   },
 );
 
+// models/user.dart
 class User {
   final int id;
   final String name;
